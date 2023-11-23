@@ -17,7 +17,8 @@ function singleRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     //capitalizes first char of string
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-    console.log(playerSelection);
+    
+    //compare player input with comp input and *return* message saying you lose or you win and state what beats what
 
 }
 
