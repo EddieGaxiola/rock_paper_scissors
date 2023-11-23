@@ -13,11 +13,15 @@ function getComputerChoice() {
 
 
 function singleRound(playerSelection, computerSelection) {
-
+    //lowercases all characters in string
+    playerSelection = playerSelection.toLowerCase();
+    //capitalizes first char of string
+    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+    console.log(playerSelection);
 
 }
 
-const playerSelection = "";
+const playerSelection = "roCk";
 const computerSelection = getComputerChoice();
 
 console.log(singleRound(playerSelection, computerSelection));
