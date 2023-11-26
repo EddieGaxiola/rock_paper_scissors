@@ -12,13 +12,14 @@ function getComputerChoice() {
     }
 }
 
-//runs single round of game
+// runs single round of game
 function singleRound(playerSelection, computerSelection) {
-    //lowercases all characters in string
+    // lowercases all characters in string
     playerSelection = playerSelection.toLowerCase();
-    //capitalizes first char of string
+    // capitalizes first char of string by cutting first char and capitalizing it, then cutting the first char of 
+    // the string and returning everything to the right of it, then concatinating the capital "R" with the remaining string chars 
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-    //compares player input with comp input and *return* message saying "you lose" or "you win" and state what beats what
+    // compares player input with comp input and *return* message saying "you lose" or "you win" and state what beats what
     if(playerSelection == computerSelection) {
         console.log("It's a Draw");
         return roundScore = "";
@@ -49,10 +50,10 @@ function singleRound(playerSelection, computerSelection) {
     }
 }
 
-//runs loop for 5 rounds of singleRound()
+// runs loop for 5 rounds of singleRound()
 function game() {
     let gameScore = 0;
-    
+
     for(let i = 0; i < 5; i++) {
         playerSelection = prompt("Pick Rock, or Paper, or Scissors: ");
         computerSelection = getComputerChoice();
