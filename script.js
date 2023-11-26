@@ -1,4 +1,4 @@
-//function that generates random choice
+// generates random choice
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     if(randomNumber == 1) {
@@ -12,53 +12,54 @@ function getComputerChoice() {
     }
 }
 
-//function that runs single round of game
+//runs single round of game
 function singleRound(playerSelection, computerSelection) {
     //lowercases all characters in string
     playerSelection = playerSelection.toLowerCase();
     //capitalizes first char of string
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
-    
-    //compare player input with comp input and *return* message saying "you lose" or "you win" and state what beats what
+    //compares player input with comp input and *return* message saying "you lose" or "you win" and state what beats what
     if(playerSelection == computerSelection) {
-        roundScore = roundScore;
-        return "It's a Draw";
+        console.log("It's a Draw");
+        return roundScore = "";
     }
-    else if( (playerSelection == "Rock") && (computerSelection == "Paper")) {
-        roundScore = roundScore;
-        return "You Lose! Paper beats Rock";
+    else if( (playerSelection == "Rock") && (computerSelection == "Paper")) {;
+        console.log("You Lose! Paper beats Rock");
+        return roundScore = "Lose";
     }
     else if( (playerSelection == "Rock") && (computerSelection == "Scissors")) {
-        roundScore = "Win";
-        return "You Win! Rock beats Scissors";
+        console.log("You Win! Rock beats Scissors");
+        return roundScore = "Win";
     }
     else if( (playerSelection == "Paper") && (computerSelection == "Rock") ) {
-        roundScore = "Win";
-        return "You Win! Paper beats Rock";
+        console.log("You Win! Paper beats Rock");
+        return roundScore = "Win";
     }
     else if( (playerSelection == "Paper") && (computerSelection == "Scissors") ) {
-        roundScore = "Lose";
-        return "You Lose! Scissors beat Paper";
+        console.log("You Lose! Scissors beat Paper");
+        return roundScore = "Lose";
     }
     else if( (playerSelection == "Scissors") && (computerSelection == "Rock") ) {
-        roundScore = "Lose";
-        return "You Lose! Rock beats Scissors";
+        console.log("You Lose! Rock beats Scissors"); 
+        return roundScore = "Lose";
     }
     else if( (playerSelection == "Scissors") && (computerSelection == "Paper") ) {
-        roundScore = "Win";
-        return "You Win! Scissors beat Paper";
+        console.log("You Win! Scissors beat Paper"); 
+        return roundScore = "Win";
     }
 }
 
-//function that runs loop for 5 rounds of singleRound()
+//runs loop for 5 rounds of singleRound()
 function game() {
+    let gameScore = 0;
+    
     for(let i = 0; i < 5; i++) {
         playerSelection = prompt("Pick Rock, or Paper, or Scissors: ");
+        computerSelection = getComputerChoice();
         singleRound(playerSelection, computerSelection);
-        if(roundScore = "Win") {
+        if(roundScore == "Win") {
             gameScore++;
         }
-
     }
     if(gameScore >= 3) {
         console.log(`You Won the Game. Score = ${gameScore} out of 5`);
@@ -70,9 +71,6 @@ function game() {
 
 
 
-const playerSelection = "pAper";
-const computerSelection = getComputerChoice();
+let playerSelection = "";
+let computerSelection = "";
 let roundScore = "";
-let gameScore = 0;
-
-console.log(singleRound(playerSelection, computerSelection));
